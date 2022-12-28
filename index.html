@@ -4,12 +4,52 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ggboost Template</title>
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
+    <!-- font awesome -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <!-- main css -->
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" title="color-1" href="assets/css/skins/color-1.css"> 
+    <link rel="stylesheet" class="alternate-style" title="color-2" type="text/css" href="assets/css/skins/color-2.css" disabled>
+    <link rel="stylesheet" title="color-3" class="alternate-style" type="text/css" href="assets/css/skins/color-3.css" disabled>
+    <link rel="stylesheet" title="color-4" class="alternate-style" type="text/css" href="assets/css/skins/color-4.css" disabled>
+    <link rel="stylesheet" title="color-5" class="alternate-style" type="text/css" href="assets/css/skins/color-5.css" disabled>
+    <link rel="stylesheet" type="text/css" href="assets/css/style-switcher.css">
   </head>
   <body>
+    <!--Preloader Start-->
+    <div class="preloader">
+      <div class="box">
+        <div></div><div></div><div></div>
+      </div>
+    </div>
+    <!--Preloader End-->
     <img src="assets/images/home_welcome_bg.webp" alt="Wellcome">
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!--Style Swicher Start - For Demo Perpus Only -->
+    <div class="style-switcher outer-shadow">
+      <div class="style-switcher-toggler s-icon outer-shadow hover-in-shadow">
+        <i class="fas fa-cog fa-spin"></i>
+      </div>
+      <div class="day-night s-icon outer-shadow hover-in-shadow">
+        <i class="fas"></i>
+      </div>
+      <h4>Theme Colors</h4>
+      <div class="colors">
+        <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+        <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+        <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+        <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+        <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+      </div>
+    </div>
+    <!--Style Swicher End - For Demo Perpus Only -->
+    <!--<script src="assets/bootstrap/js/bootstrap.min.js"></script>-->
     <script src="assets/js/script.js"></script>
+    <!-- main js -->
+    <script src="assets/js/main.js"></script>
+    <!-- style switcher js -->
+    <script src="assets/js/style-switcher.js"></script>
   </body>
 </html>
