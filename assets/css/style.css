@@ -278,12 +278,13 @@ Pre Loader
 /*--------------------
 Header Style Start
 ----------------------*/
-#site-header{
+#site-header {
     position: absolute;
     height: 100%;
     width: 100%;
     left: 0;
     top: 0;
+    z-index: 999999;
 }
 #header-top {
     background-color: rgba(0,0,0,.3);
@@ -331,12 +332,21 @@ Header Style End
 /*--------------------
 Hero Section Style Start
 ----------------------*/
-#hero-section{
+#hero-section {
     padding: 250px 0 0px 0;
     background: linear-gradient(to right,rgba(0,50,97,.85),rgba(0,50,97,.84)),url(../images/home_welcome_bg.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+}
+#hero-section #particles-js canvas {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.4;
 }
 .wellcome-logo svg {
     fill: #ddd !important;
