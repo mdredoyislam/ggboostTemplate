@@ -95,6 +95,20 @@ h1,h2,h3,h4,h5,h6{
         transform: translateY(0px);
     }
 }
+@-webkit-keyframes rotateVideoFrame{
+    0%{
+        transform:rotate(0)
+    }100%{
+        transform:rotate(360deg)
+    }
+}
+@keyframes rotateVideoFrame{
+    0%{
+        transform:rotate(0)
+    }100%{
+        transform:rotate(360deg)
+    }
+}
 @keyframes Gradient{
     0%{
         color: #fff;
@@ -125,18 +139,23 @@ h1,h2,h3,h4,h5,h6{
     padding: 0;
     max-width: 100%;
     text-align: left;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
     margin-bottom: 30px;
-    font-family: "Montserrat", sans-serif !important;
-    color: #345FDB;
-    font-size: 2rem;
-    line-height: 2.5rem;
-    font-weight: 600;
+    color: #2C2A4A;
 }
 .content{
-    font-size: 1rem;
-    margin-top: 0;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
     margin-bottom: 40px;
     display: block;
+    color: #000000;
 }
 .section-title h2{
     display: inline-block;
@@ -275,12 +294,14 @@ Pre Loader
 .btnred:hover{
     color: #e7253c !important;
 }
+.container{
+    width: 1320px !important;
+}
 /*--------------------
 Header Style Start
 ----------------------*/
 #site-header {
     position: absolute;
-    height: 100%;
     width: 100%;
     left: 0;
     top: 0;
@@ -326,6 +347,20 @@ Header Style Start
 .site-nav .nav-item:hover {
     color: #fff !important;
 }
+.mobilemenu {
+    float: right;
+    height: 36px;
+    width: 40px;
+    border: 0;
+    display: flex;
+    flex-wrap: wrap;
+    display: none;
+}
+.mobilemenu span {
+    height: 5px;
+    width: 100%;
+    background: #333;
+}
 /*--------------------
 Header Style End
 ----------------------*/
@@ -340,7 +375,11 @@ Hero Section Style Start
     background-size: cover;
     position: relative;
 }
-#hero-section #particles-js canvas {
+#hero-section .container {
+    z-index: 555;
+    position: relative;
+}
+#hero-section #heroanimation canvas {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -471,18 +510,30 @@ Status Section Style Start
 ----------------------*/
 
 #home-section-stats{
-    padding: 100px 0 80px 0;
+    padding: 50px 0 50px 0;
     background: linear-gradient(to right,rgba(255,255,255,0) 25%,#fff 50%),url(../images/home_section_1_bg_v2.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
+#home-section-stats::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: url(../images/boostingservices.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+}
 .render-img img {
     margin-left: -100px;
 }
 .Siconwrap img {
-    width: 40px;
+    width: 35px;
 }
 .Siconwrap h3 {
     margin: 0;
@@ -490,25 +541,32 @@ Status Section Style Start
     font-family: 'Montserrat';
     font-weight: 600;
     line-height: 1.7;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 .status-iconBox p {
     margin: 0;
-    font-size: 15px;
+    font-family: 'Open Sans';
+    font-style: normal;
     font-weight: 400;
-    letter-spacing: 0.6px;
-    line-height: 1.5rem;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
 }
 .status-iconBox {
-    padding: 15px;
-    background: #e3fdfd;
-    border-radius: 5px;
+    padding: 23px 24px;
+    background: #F2FBF8;
 }
 .status-iconBox {
     margin-bottom: 20px;
 }
-.status-iconBox:nth-child(even) {
-    background: #fff2d4;
+.status-iconBox:last-child {
+    margin-bottom: 0px;
+}
+.box2 {
+    background: #FFF3F3 !important;
+}
+.box3 {
+    background: #F3FBFF !important;
 }
 /*--------------------
 Status Section Style End
@@ -521,21 +579,31 @@ Process Section Style Start
     padding-bottom: 100px;
     background-color: #f6f9fc;
 }
+.Piconboxes img {
+    width: 60px;
+}
 .Piconboxes h3 {
-    font-weight: 600;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
-    line-height: 1rem;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
     margin-bottom: 15px;
+    color: #000000;
 }
 .Piconboxes p{
-    font-size: 1rem;
-    line-height: 1.5;
+    font-family: 'Open Sans';
+    font-style: normal;
     font-weight: 400;
-    color: #212529;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
 }
 .Piconboxes {
     margin-bottom: 20px;
+}
+.Piconboxes .col-10 {
+    padding-left: 0 !important;
 }
 .Piconboxes:last-child {
     margin-bottom: 0;
@@ -544,21 +612,28 @@ Process Section Style Start
     position: relative;
     width: 100%;
 }
+#video-frame {
+    height: 420px;
+}
+#video-frame-inner{
+    animation: 50s linear infinite reverse rotateVideoFrame;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+}
 .video-poster {
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: 50%;
-    width: 350px;
-    height: 350px;
-    -ms-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
+    width: 345px;
+    height: 345px;
+    transform: translateX(-50%) translateY(-50%);
     border-radius: 50%;
-    background-position: center center!important;
-    background-size: cover!important;
-    transition: background-image .3s;
+    transition: background-image 0.3s ease 0s;
     cursor: pointer;
-    box-shadow: inset 0 0 10px rgb(0 0 0 / 50%);
-    background-image: url(../images/video-poster.webp);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px inset;
+    background-image: url("../images/video-poster.webp");
+    background-position: center center !important;
+    background-size: cover !important;
 }
 .video-poster svg {
     position: absolute;
@@ -579,8 +654,566 @@ Process Section Style Start
     position: absolute;
     top: 0;
     left: 0;
-    transition: background-color .3s;
+    transition: background-color .5s;
+}
+.video-poster:hover::before {
+    opacity: 0;
 }
 /*--------------------
 Process Section Style End
+----------------------*/
+/*--------------------
+Live Chat Section Style Start
+----------------------*/
+#live-chat-section{
+    padding: 0;
+    background: linear-gradient(to right,rgba(0,50,97,.95),rgba(0,50,97,.95)),url(../images/home_chat_bg.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.chat-content h3{
+    color: #ffffff;
+}
+.chat-content p {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.chat-content p:last-child{
+    margin-bottom: 0 !important;
+}
+.live-btn {
+    font-family: inherit !important;
+    margin-left: 10px;
+    display: inline-block;
+    line-height: 0;
+    padding: 1.7rem 3rem !important;
+    background: #fff !important;
+    color: #345fdb !important;
+    margin: 0 !important;
+    margin-top: 25px !important;
+}
+.live-btn::before {
+    background: #345fdb !important;
+    color: #fff;
+}
+.live-btn:hover {
+    color: #fff !important;
+}
+/*--------------------
+Live Chat Section Style End
+----------------------*/
+/*--------------------
+Bloging Section Style Start
+----------------------*/
+#bloging-section{
+    padding: 100px 0;
+    background: #fff;
+    position: relative;
+}
+.Biconboxes {
+    background: #F2FBF8;
+    text-align: center;
+    padding: 40px;
+    border-radius: 5px;
+}
+.bicon {
+    display: inline-block;
+    background: #82D9C8;
+    height: 96px;
+    width: 96px;
+    border-radius: 50%;
+    line-height: 96px;
+    margin-bottom: 15px;
+}
+.bicons h3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #000;
+}
+.bicons p {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #000;
+    letter-spacing: 0.3px;
+}
+.bbox2 {
+    background: #FFF3F3;
+}
+.bbox2 .bicon {
+    background: #FF6C6C;
+}
+.bbox3 {
+    background: #E6F2FF;
+}
+.bbox3 .bicon {
+    background: #9A99F2;
+}
+.video-wrapper h3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000;
+}
+.blog-video-poster {
+    position: relative;
+}
+.blog-video-thumb {
+    width: 100%;
+    height: 100%;
+}
+.blog-video-play {
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+/*--------------------
+Bloging Section Style End
+----------------------*/
+/*--------------------
+Security Section Style Start
+----------------------*/
+.securityimg {
+    margin-top: -200px;
+    margin-left: -134px;
+}
+.security-content h3{
+    color: #fff;
+    text-align: center;
+}
+.securityiconbox img {
+    margin-bottom: 15px;
+    height: 50px;
+}
+.securityiconbox h3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+/*--------------------
+Security Section Style End
+----------------------*/
+/*--------------------
+Testimonial Section Style Start
+----------------------*/
+#testimonials{
+    padding: 100px 0 170px 0;
+    background: #F6F9FC,url(../images/shape.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+#testimonials::before {
+    content: "";
+    position: absolute !important;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/shape.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider-items {
+    background: #fff;
+    padding: 30px 20px;
+    box-shadow: 0 0 10px #3333330a;
+    border-radius: 10px;
+    position: relative;
+    margin: 15px;
+}
+.slider-items .stars {
+    margin-bottom: 15px;
+    display: flex;
+}
+.slider-items .cuntry {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #212529;
+    margin-bottom: 20px;
+}
+.slider-items .title {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    color: #212529;
+    margin-bottom: 10px;
+}
+.slider-items .time {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 23px;
+    color: #898989;
+    margin: 0 !important;
+}
+.slider-items .division {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 5px;
+    position: absolute;
+    top: 18px;
+    right: 25px;
+}
+.slider-wrapper .slick-arrow {
+    background: #E2E8EE;
+    border: 0;
+    font-size: 30px;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+}
+.slider-wrapper .slick-arrow {
+    background: #E2E8EE;
+    border: 0;
+    font-size: 30px;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    transition: all linear.3s;
+    cursor: pointer;
+}
+.slider-wrapper .slick-next {
+    left: 75px;
+    position: absolute;
+    bottom: -60px;
+}
+.slider-wrapper .slick-prev {
+    bottom: -60px;
+    position: absolute;
+    left: 15px;
+}
+.slider-wrapper .slick-arrow:hover{
+    background: #007bff;
+}
+/*--------------------
+Testimonial Section Style End
+----------------------*/
+/*--------------------
+Support Section Style Start
+----------------------*/
+#support-section{
+    padding: 100px 0;
+    background-image: linear-gradient(to right,#122764 40%,rgba(18,39,100,.2) 70%),url(../images/support_bg.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*--------------------
+Support Section Style End
+----------------------*/
+/*--------------------
+About Section Style Start
+----------------------*/
+#about-company{
+    padding: 100px 0;
+}
+.about-btn {
+    background: #345fdb !important;
+    color: #fff !important;
+}
+.about-content p {
+    margin-bottom: 20px;
+}
+/*--------------------
+About Section Style End
+----------------------*/
+/*--------------------
+Footer Section Style Start
+----------------------*/
+#site-footer{
+    padding: 100px 0;
+    background: linear-gradient(to right,#121935,#121920);
+}
+.footer-about .logo {
+    width: 140px;
+    margin-bottom: 25px;
+}
+.footer-about .content {
+    color: #fff;
+    margin-bottom: 25px;
+    line-height: 30px !important;
+}
+.footer-about .copyright {
+    color: #9cb2c8;
+    margin-bottom: 35px;
+}
+.footer-widgets .widget-title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: left;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.footer-widgets ul li a {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 33px;
+    color: #9cb2c8;
+}
+/*--------------------
+Footer Section Style End
+----------------------*/
+#liveanimation canvas, #liveanimation1 canvas, #support-animation canvas {
+    position: absolute;
+    height: auto;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+/*--------------------
+Responsive Query Start
+----------------------*/
+@media(max-width: 1024px){
+
+}
+@media(max-width: 991px){}
+@media(max-width: 768px){
+    .site-nav ul {
+        display: block;
+    }
+    .site-nav ul li {
+        margin-bottom: 10px;
+    }
+    .site-nav {
+        background: #333;
+        padding: 10px;
+    }
+    .brand a img {
+        width: 170px;
+    }
+    #live-chat-section .row {
+        order: revert !important;
+    }
+    .chat-content {
+        margin-top: 80px;
+        margin-bottom: 50px;
+    }
+    .front-video {
+        margin-top: 60px;
+    }
+    .video-poster {
+        width: 442px;
+        height: 442px;
+    }
+    #live-chat-section .row {
+        order: revert !important;
+    }
+    .Biconboxes {
+        margin-bottom: 30px;
+    }
+    .video-wrapper {
+        margin-bottom: 65px;
+    }
+    .security-content {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .footer-widgets {
+        margin-top: 50px;
+    }
+    .mobilemenu{
+        display: flex;
+    }
+    .site-nav ul {
+        display: none;
+    }
+    .site-nav {
+        padding: 0;
+        height: 40px;
+        width: 40px;
+        text-align: end;
+        float: right;
+        background-image: url(../images/menu.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+    }
+    .site-nav:hover ul {
+        display: flex;
+    }
+    .container{
+        width: unset !important;
+    }
+    #home-section-stats::before {
+        width: 100%;
+        opacity: 0.5;
+    }
+    .chat-content {
+        text-align: center !important;
+    }
+    .chat-content h3 {
+        text-align: center;
+    }
+    .securityimg {
+        margin-top: -100px;
+        margin-left: 0;
+    }
+    .securityiconbox {
+        margin-bottom: 30px;
+    }
+    .status-content h3 {
+        text-shadow: 0 0 10px #fff;
+    }
+    .about-content {
+        text-align: center;
+    }
+    .about-content h3 {
+        text-align: center;
+    }
+}
+@media(max-width: 767px){
+    .site-nav ul {
+        display: block;
+    }
+    .site-nav ul li {
+        margin-bottom: 10px;
+    }
+    .site-nav {
+        padding: 10px;
+    }
+    .brand a img {
+        width: 170px;
+    }
+    #live-chat-section .row {
+        order: revert !important;
+    }
+    .chat-content {
+        margin-top: 80px;
+        margin-bottom: 50px;
+    }
+    .front-video {
+        margin-top: 60px;
+    }
+    .video-poster {
+        width: 345px;
+        height: 345px;
+    }
+    .Biconboxes {
+        margin-bottom: 30px;
+    }
+    .video-wrapper {
+        margin-bottom: 65px;
+    }
+    .security-content {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .footer-widgets {
+        margin-top: 50px;
+    }
+    .mobilemenu{
+        display: flex;
+    }
+    .site-nav ul {
+        display: none;
+    }
+    .site-nav {
+        padding: 0;
+        height: 30px;
+        width: 30px;
+        text-align: end;
+        float: right;
+    }
+    .site-nav:hover ul {
+        display: flex;
+    }
+    .container{
+        width: unset !important;
+    }
+    #home-section-stats::before {
+        width: 100%;
+        opacity: 0.5;
+    }
+    .chat-content {
+        text-align: center !important;
+    }
+    .chat-content h3 {
+        text-align: center;
+    }
+    .securityimg {
+        margin-top: -100px;
+        margin-left: 0;
+    }
+    .securityiconbox {
+        margin-bottom: 30px;
+    }
+    .status-content h3 {
+        text-shadow: 0 0 10px #fff;
+    }
+    .about-content {
+        text-align: center;
+    }
+    .about-content h3 {
+        text-align: center;
+    }
+}
+@media(max-width: 425px){
+    .site-nav {
+        padding: 0;
+        height: 55px;
+        width: 55px;
+        text-align: end;
+        float: right;
+    }
+    .leftlogo {
+        width: 60% !important;
+    }
+    .leftmenu {
+        width: 40% !important;
+    }
+    .button-list .ggBtn {
+        font-size: 0.6rem !important;
+        padding: 0.4rem 0.5rem !important;
+        line-height: 31px !important;
+        font-weight: 300 !important;
+    }
+    .status-iconBox p {
+        padding-left: 50px;
+    }
+    .Siconwrap img {
+        margin-bottom: -25px;
+    }
+    .video-poster {
+        width: 250px;
+        height: 250px;
+    }
+}
+/*--------------------
+Responsive Query End
 ----------------------*/
